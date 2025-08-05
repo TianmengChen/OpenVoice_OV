@@ -82,7 +82,7 @@ def split_audio_vad(audio_path, audio_name, target_dir, split_seconds=10.0):
         output_sample=True,
         min_speech_duration=0.1,
         min_silence_duration=1,
-        method="silero",
+        method="silero:3.0",
     )
     segments = [(seg["start"], seg["end"]) for seg in segments]
     segments = [(float(s) / SAMPLE_RATE, float(e) / SAMPLE_RATE) for s,e in segments]
